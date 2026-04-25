@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Players - MSD Values</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+body{
+margin:0;
+font-family:'Fredoka One', cursive;
+background:radial-gradient(circle at top,#111,#0b0b0b);
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:230px;
+height:100vh;
+overflow-y:auto;
+box-sizing:border-box;
+
+background:#111;
+padding:20px 20px 80px 20px;
+border-right:1px solid #222;
+}
+
+.sidebar::-webkit-scrollbar{
+width:6px;
+}
+.sidebar::-webkit-scrollbar-thumb{
+background:linear-gradient(#00d4ff,#ff4fa3);
+border-radius:10px;
+}
+
+/* TITULO */
+.sidebar h2{
+letter-spacing:2px;
+text-shadow:0 0 10px #00d4ff;
+}
+
+/* LINKS */
+.sidebar a{
+display:block;
+color:#ccc;
+text-decoration:none;
+padding:8px;
+border-radius:6px;
+margin-top:4px;
+transition:0.2s;
+}
+
+.sidebar a:hover{
+background:#1a1a1a;
+transform:translateX(6px);
+box-shadow:0 0 10px #00d4ff55;
+color:white;
+}
+
+.sidebar h3{
+color:#888;
+margin-top:20px;
+}
+
+/* MAIN (FIX REAL) */
+.main{
+margin-left:230px;
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+/* CONTENEDOR */
+.container{
+width:100%;
+max-width:700px;
+}
+
+/* TITLE */
+.title{
+font-size:70px;
+color:#00d4ff;
+text-shadow:0 0 25px #00d4ff;
+text-align:center;
+}
+
+/* SEARCH */
+#search{
+padding:12px;
+border-radius:8px;
+background:#111;
+color:white;
+border:1px solid #333;
+margin:25px auto;
+display:block;
+width:100%;
+max-width:300px;
+outline:none;
+}
+
+#search:focus{
+box-shadow:0 0 10px #00d4ff;
+}
+
+/* PLAYER CARD */
+.player{
+background:#111;
+margin:12px 0;
+padding:14px;
+border-radius:10px;
+border:1px solid #222;
+transition:0.25s;
+}
+
+.player:hover{
+transform:scale(1.04);
+box-shadow:0 0 20px #00d4ff;
+}
+
+/* TOP 1 2 3 */
+.top1{
+box-shadow:
+0 0 15px gold,
+0 0 30px gold,
+0 0 50px #FFD700;
+}
+
+.top2{
+box-shadow:
+0 0 15px silver,
+0 0 30px silver,
+0 0 50px #C0C0C0;
+}
+
+.top3{
+box-shadow:
+0 0 15px #cd7f32,
+0 0 30px #cd7f32,
+0 0 50px #8b5a2b;
+}
+
+/* TEXTOS */
+.gold{color:#FFD700;text-shadow:0 0 10px gold;}
+.silver{color:#C0C0C0;text-shadow:0 0 10px silver;}
+.bronze{color:#cd7f32;text-shadow:0 0 10px #cd7f32;}
+
+.rank{
+font-weight:bold;
+font-size:18px;
+}
+
+.value{
+float:right;
+color:#00d4ff;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>MSD Values</h2>
+
+<h3>Main</h3>
+
+<a href="Index.html">🏠 Home</a>
+<a href="Unique.html">💠 Unique</a>
+<a href="Top.html">🏆 Top Items</a>
+<a href="Players.html">👑 Top Players</a>
+
+<h3>Community</h3>
+
+<a href="https://www.roblox.com/groups/33779394" target="_blank">
+👥 Roblox Group
+</a>
+
+<h3>CATEGORIES</h3>
+
+<a href="Stelars.html">⭐ Stelars</a>
+<a href="Chromas.html">🌈 Chromas</a>
+<a href="Secrets.html">🔮 Secrets</a>
+<a href="Godlys.html">💎 Godlys</a>
+<a href="Legendary.html">🔴 Legendary</a>
+
+</div>
+
+<div class="main">
+
+<div class="container">
+
+<div class="title">TOP 11 PLAYERS</div>
+
+<input type="text" id="search" placeholder="Search player..." onkeyup="render()">
+
+<div id="list"></div>
+
+</div>
+
+</div>
+
+<script>
+
+let players = [
+{name:"Luc4saliendo", points:66666},
+{name:"StarPony350", points:46919},
+{name:"JameselproOvO", points:25308},
+{name:"Sammy456849", points:17640},
+{name:"Cat_creepy24", points:16708},
+{name:"elbenja8w654", points:16204},
+{name:"elprosalo5", points:12995},
+{name:"doggy_piggy1", points:11285},
+{name:"merlingamer590", points:10788},
+{name:"byEver_23YT1", points:9862},
+{name:"bobowawahahaev", points:8212}
+]
+
+players.sort((a,b)=>b.points-a.points)
+
+function render(){
+
+let search = document.getElementById("search").value.toLowerCase()
+
+let html=""
+
+players
+.filter(p=>p.name.toLowerCase().includes(search))
+.forEach((p,index)=>{
+
+let medal=""
+let className=""
+let glow=""
+
+if(index===0){ medal="🥇"; className="gold"; glow="top1" }
+else if(index===1){ medal="🥈"; className="silver"; glow="top2" }
+else if(index===2){ medal="🥉"; className="bronze"; glow="top3" }
+else{ medal="#"+(index+1) }
+
+html+=`
+<div class="player ${className} ${glow}">
+<span class="rank">${medal} ${p.name}</span>
+<span class="value">${p.points}</span>
+</div>
+`
+
+})
+
+document.getElementById("list").innerHTML = html
+
+}
+
+render()
+
+</script>
+
+</body>
+</html>

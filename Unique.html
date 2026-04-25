@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unique Values - MSD Values</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+body{
+margin:0;
+font-family:'Fredoka One', cursive;
+background:radial-gradient(circle at top,#111,#070707);
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:230px;
+height:100vh;
+overflow-y:auto;
+box-sizing:border-box;
+background:#111;
+padding:20px 20px 80px 20px;
+border-right:1px solid #222;
+}
+
+/* SCROLL */
+.sidebar::-webkit-scrollbar{
+width:6px;
+}
+.sidebar::-webkit-scrollbar-thumb{
+background:linear-gradient(cyan,purple);
+border-radius:10px;
+}
+
+/* TITLE SIDEBAR */
+.sidebar h2{
+margin-top:0;
+text-shadow:0 0 10px cyan;
+}
+
+/* LINKS */
+.sidebar a{
+display:block;
+color:#ccc;
+text-decoration:none;
+padding:8px;
+border-radius:6px;
+margin-top:4px;
+transition:0.2s;
+}
+
+.sidebar a:hover{
+background:#1a1a1a;
+transform:translateX(6px);
+box-shadow:0 0 10px cyan;
+color:white;
+}
+
+.sidebar h3{
+color:#888;
+margin-top:20px;
+}
+
+/* MAIN CENTRADO */
+.main{
+margin-left:250px;
+padding:40px;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+/* TITLE */
+.uniqueTitle{
+font-size:60px;
+
+background:linear-gradient(
+90deg,
+red,orange,yellow,lime,cyan,blue,purple,red
+);
+
+background-size:400%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:chromaMove 6s linear infinite;
+
+text-shadow:
+0 0 20px red,
+0 0 40px blue,
+0 0 60px purple;
+}
+
+/* SEARCH */
+#search{
+padding:12px;
+width:300px;
+border-radius:8px;
+border:1px solid #444;
+background:#111;
+color:white;
+margin-top:20px;
+margin-bottom:30px;
+outline:none;
+text-align:center;
+}
+
+#search:focus{
+box-shadow:0 0 12px cyan;
+}
+
+/* SUBTITLE */
+.section{
+font-size:28px;
+margin-bottom:15px;
+
+background:linear-gradient(90deg,cyan,purple);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* TABLE */
+.searchTable{
+width:80%;
+border-collapse:collapse;
+margin-bottom:40px;
+
+border:2px solid transparent;
+
+background:
+linear-gradient(#111,#111) padding-box,
+linear-gradient(90deg,red,orange,yellow,lime,cyan,blue,purple) border-box;
+
+border-radius:12px;
+
+box-shadow:
+0 0 10px rgba(255,255,255,0.1),
+0 0 25px rgba(0,255,255,0.2);
+}
+
+/* CELLS */
+th, td{
+padding:12px;
+border-bottom:1px solid #222;
+}
+
+/* CENTER NUMBERS */
+td:nth-child(2),
+td:nth-child(3),
+th:nth-child(2),
+th:nth-child(3){
+text-align:center;
+}
+
+/* CHROMA TEXT */
+.chroma{
+background:linear-gradient(
+90deg,
+red,orange,yellow,lime,cyan,blue,purple
+);
+
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:chromaMove 5s linear infinite;
+
+font-weight:bold;
+}
+
+/* HOVER */
+tr:hover{
+background:#181818;
+box-shadow:
+inset 0 0 10px cyan,
+inset 0 0 20px purple;
+transform:scale(1.01);
+transition:0.2s;
+}
+
+/* ANIMACIONES */
+@keyframes chromaMove{
+0%{background-position:0%}
+100%{background-position:400%}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>MSD Values</h2>
+
+<h3>Main</h3>
+<a href="Index.html">🏠 Home</a>
+<a href="Unique.html">💠 Unique</a>
+<a href="Inventory.html">📦 Inventory</a>
+<a href="Top.html">🏆 Top Items</a>
+<a href="Players.html">👑 Top Players</a>
+
+<h3>Community</h3>
+<a href="https://www.roblox.com/groups/33779394" target="_blank">
+👥 Roblox Group
+</a>
+
+<h3>Categories</h3>
+<a href="Stelars.html">⭐ Stelars</a>
+<a href="Chromas.html">🌈 Chromas</a>
+<a href="Secrets.html">🔮 Secrets</a>
+<a href="Godlys.html">💎 Godlys</a>
+<a href="Legendary.html">🔴 Legendary</a>
+
+</div>
+
+<div class="main">
+
+<div class="uniqueTitle">Unique Values</div>
+
+<input type="text" id="search" placeholder="Search unique weapon..." onkeyup="searchItem()">
+
+<div class="section">💠 Unique Weapons</div>
+
+<table class="searchTable">
+
+<tr>
+<th class="chroma">Weapon</th>
+<th class="chroma">Value</th>
+<th class="chroma">Demand</th>
+<th class="chroma">Holder</th>
+</tr>
+
+<tr>
+<td class="chroma">Chroma Glitched Scythe</td>
+<td class="chroma">-100</td>
+<td class="chroma">+10</td>
+<td class="chroma">elbenja8w654</td>
+</tr>
+
+<tr>
+<td class="chroma">Petals</td>
+<td class="chroma">1000</td>
+<td class="chroma">+10</td>
+<td class="chroma">cat_creepy24</td>
+</tr>
+
+<tr>
+<td class="chroma">Sakura</td>
+<td class="chroma">1000</td>
+<td class="chroma">+10</td>
+<td class="chroma">expurged_gamer50</td>
+</tr>
+
+<tr>
+<td class="chroma">Set Angry Dog + Max</td>
+<td class="chroma">1000</td>
+<td class="chroma">+10</td>
+<td class="chroma">merlingamer590</td>
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+function searchItem(){
+let input = document.getElementById("search").value.toLowerCase()
+let tables = document.getElementsByClassName("searchTable")
+
+for(let t=0;t<tables.length;t++){
+let tr = tables[t].getElementsByTagName("tr")
+
+for(let i=1;i<tr.length;i++){
+let td = tr[i].getElementsByTagName("td")[0]
+
+if(td){
+let txt = td.textContent || td.innerText
+
+tr[i].style.display =
+txt.toLowerCase().includes(input) ? "" : "none"
+}
+}
+}
+}
+
+</script>
+
+</body>
+</html>

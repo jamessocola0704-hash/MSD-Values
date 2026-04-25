@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSD Values</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+body{
+margin:0;
+font-family:'Fredoka One', cursive;
+background:radial-gradient(circle at top,#111,#0b0b0b);
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:240px;
+height:100vh;
+background:#111;
+padding:20px;
+border-right:1px solid #222;
+overflow-y:auto;
+box-sizing:border-box;
+}
+
+/* SCROLL */
+.sidebar::-webkit-scrollbar{
+width:6px;
+}
+.sidebar::-webkit-scrollbar-thumb{
+background:linear-gradient(#ff4fa3,#00d4ff);
+border-radius:10px;
+}
+
+/* TITULO */
+.sidebar h2{
+margin:0;
+margin-bottom:10px;
+text-shadow:0 0 10px #ff4fa3;
+}
+
+/* SECCIONES */
+.sidebar h3{
+margin-top:20px;
+margin-bottom:6px;
+font-size:14px;
+color:#888;
+}
+
+/* LINKS */
+.sidebar a{
+display:block;
+padding:8px;
+margin:2px 0;
+color:#ccc;
+text-decoration:none;
+border-radius:6px;
+transition:0.2s;
+}
+
+.sidebar a:hover{
+background:#1a1a1a;
+color:white;
+transform:translateX(5px);
+box-shadow:0 0 10px #ff4fa355;
+}
+
+/* MAIN */
+.main{
+margin-left:260px;
+padding:40px;
+max-width:900px;
+}
+
+/* TITLE */
+.title{
+font-size:70px;
+margin-bottom:10px;
+color:#ff4fa3;
+
+text-shadow:
+0 0 10px #ff4fa3,
+0 0 25px #ff4fa3,
+0 0 50px #ff4fa3;
+
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px #ff4fa3; }
+to{
+text-shadow:
+0 0 20px #ff4fa3,
+0 0 40px #ff4fa3,
+0 0 70px #ff4fa3;
+}
+}
+
+/* SUBTITLE */
+.subtitle{
+color:#aaa;
+margin-bottom:25px;
+}
+
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:#111;
+padding:20px;
+border-radius:10px;
+border:1px solid #222;
+cursor:pointer;
+transition:0.25s;
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #ff4fa3;
+}
+
+/* FOUNDERS */
+.creators{
+margin-top:30px;
+padding:15px;
+background:#111;
+border-radius:10px;
+border:1px solid #222;
+box-shadow:0 0 10px #ff4fa333;
+}
+
+.creators h3{
+margin-top:0;
+color:#ff4fa3;
+}
+
+.creator{
+margin-top:10px;
+display:flex;
+justify-content:space-between;
+font-size:14px;
+}
+
+.name{ color:white; }
+.role{ color:#aaa; }
+
+/* CHANGELOG */
+.changelog{
+margin-top:30px;
+padding:15px;
+background:#111;
+border-radius:10px;
+border:1px solid #222;
+box-shadow:0 0 10px #00d4ff33;
+}
+
+.changelog h3{
+margin-top:0;
+color:#00d4ff;
+}
+
+.log{
+margin-top:15px;
+font-size:14px;
+color:#ccc;
+}
+
+.log b{ color:white; }
+.log p{
+margin:5px 0 0 0;
+color:#aaa;
+}
+
+/* DESTACAR ULTIMA VERSION */
+.log:first-child{
+box-shadow:0 0 15px #00d4ff44;
+padding:10px;
+border-radius:8px;
+}
+
+/* UPDATE */
+.update{
+margin-top:30px;
+padding:15px;
+background:#111;
+border-radius:10px;
+border:1px solid #222;
+box-shadow:0 0 10px #ff4fa3;
+}
+
+.update b{
+color:#ff4fa3;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h2>MSD Values</h2>
+
+<h3>Main</h3>
+<a href="Index.html">🏠 Home</a>
+<a href="Unique.html">💠 Unique</a>
+<a href="Inventory.html">📦 Inventory</a>
+<a href="Top.html">🏆 Top Items</a>
+<a href="Players.html">👑 Top Players</a>
+
+<h3>Community</h3>
+<a href="https://www.roblox.com/groups/33779394" target="_blank">👥 Roblox Group</a>
+
+<h3>Categories</h3>
+<a href="Stelars.html">⭐ Stelars</a>
+<a href="Chromas.html">🌈 Chromas</a>
+<a href="Secrets.html">🔮 Secrets</a>
+<a href="Godlys.html">💎 Godlys</a>
+<a href="Legendary.html">🔴 Legendary</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="title">MSD VALUES</div>
+
+<div class="subtitle">
+MSD Values is the official value list for Murder Stars Deluxe, helping players trade smarter and track item demand.
+</div>
+
+<!-- CARDS -->
+<div class="cards">
+
+<div class="card" onclick="location.href='Godlys.html'">💎 Godlys</div>
+<div class="card" onclick="location.href='Chromas.html'">🌈 Chromas</div>
+<div class="card" onclick="location.href='Legendary.html'">🔴 Legendary</div>
+<div class="card" onclick="location.href='Top.html'">🏆 Top Items</div>
+<div class="card" onclick="location.href='Players.html'">👑 Top Players</div>
+<div class="card" onclick="location.href='Unique.html'">💠 Unique</div>
+
+</div>
+
+<!-- FOUNDERS -->
+<div class="creators">
+<h3>Founders :D</h3>
+
+<div class="creator">
+<span class="name">IcexStAr</span>
+<span class="role">Owner / Developer</span>
+</div>
+
+
+</div>
+
+<!-- CHANGELOG -->
+<div class="changelog">
+<h3>📜 Website Changelog</h3>
+
+<div class="log">
+<b>v1.2 - April 2026</b>
+<p>
+• Added Top Players page<br>
+• Improved sidebar<br>
+• UI redesign
+</p>
+</div>
+
+</div>
+
+<!-- UPDATE -->
+<div class="update">
+<b>Last Update:</b> <span id="date"></span>
+</div>
+
+</div>
+
+<script>
+const now = new Date()
+document.getElementById("date").innerText =
+now.toLocaleDateString("en-US", {
+year:"numeric",
+month:"long",
+day:"numeric"
+})
+</script>
+
+</body>
+</html>

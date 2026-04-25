@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Values - MSD Values</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+body{
+margin:0;
+font-family:'Fredoka One', cursive;
+
+background:
+radial-gradient(circle at top, #1a1a1a, #0b0b0b),
+radial-gradient(circle at bottom, #0f0020, transparent);
+
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:230px;
+height:100vh;
+overflow-y:auto;
+background:#111;
+padding:20px;
+border-right:1px solid #222;
+z-index:100;
+}
+
+.sidebar h2{
+margin-top:0;
+text-shadow:0 0 10px #ff4fa3;
+}
+
+.sidebar a{
+display:block;
+color:#ccc;
+text-decoration:none;
+padding:8px;
+border-radius:6px;
+margin-top:4px;
+transition:0.2s;
+}
+
+.sidebar a:hover{
+background:#1a1a1a;
+transform:translateX(5px);
+box-shadow:0 0 10px #ff4fa355;
+color:white;
+}
+
+.sidebar h3{
+color:#888;
+margin-top:20px;
+}
+
+/* MAIN */
+.main{
+margin-left:230px;
+padding:40px;
+display:flex;
+justify-content:center;
+}
+
+/* CONTAINER */
+.container{
+width:100%;
+max-width:700px;
+}
+
+/* TITLE */
+.title{
+font-size:60px;
+text-align:center;
+
+background:linear-gradient(90deg,#ff4fa3,#ff9ad5,#ff4fa3);
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:glow 4s linear infinite;
+}
+
+/* CONTROLS */
+.controls{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+#search,#filter{
+padding:10px;
+border-radius:6px;
+background:#111;
+color:white;
+border:1px solid #333;
+}
+
+#search:focus{
+outline:none;
+box-shadow:0 0 10px #ff4fa3;
+}
+
+/* ITEM */
+.topItem{
+background:#111;
+margin:10px 0;
+padding:14px;
+border-radius:10px;
+border:1px solid #222;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+transition:0.25s;
+}
+
+/* HOVER */
+.topItem:hover{
+transform:scale(1.02);
+}
+
+/* LEFT BLOCK */
+.itemInfo{
+text-align:left;
+}
+
+/* VALUE */
+.value{
+font-weight:bold;
+color:#ff4fa3;
+text-shadow:0 0 8px #ff4fa3;
+}
+
+/* TOP 1 2 3 */
+.top1{
+border:2px solid gold;
+box-shadow:0 0 15px gold;
+}
+.top2{
+border:2px solid silver;
+}
+.top3{
+border:2px solid #cd7f32;
+}
+
+/* RARITIES */
+.chroma{
+background:linear-gradient(90deg,red,orange,yellow,lime,cyan,blue,violet);
+background-size:400%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:rainbow 6s linear infinite;
+}
+
+.stelars{
+color:#FFD700;
+text-shadow:0 0 8px gold;
+}
+
+.secret{
+color:#b84cff;
+text-shadow:0 0 10px #8f00ff;
+}
+
+.godly{
+color:#ff3ea5;
+text-shadow:0 0 10px #ff3ea5;
+}
+
+/* ANIM */
+@keyframes rainbow{
+0%{background-position:0%}
+100%{background-position:400%}
+}
+
+@keyframes glow{
+0%{background-position:0%}
+100%{background-position:300%}
+}
+
+/* COUNT */
+.count{
+text-align:center;
+color:#888;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h2>MSD Values</h2>
+
+<a href="Index.html">🏠 Home</a>
+<a href="Unique.html">💠 Unique</a>
+<a href="Inventory.html">📦 Inventory</a>
+<a href="Top.html">🏆 Top Items</a>
+<a href="Players.html">👑 Top Players</a>
+
+<h3>Community</h3>
+<a href="https://www.roblox.com/groups/33779394" target="_blank">👥 Roblox Group</a>
+
+<h3>CATEGORIES</h3>
+<a href="Stelars.html">⭐ Stelars</a>
+<a href="Chromas.html">🌈 Chromas</a>
+<a href="Secrets.html">🔮 Secrets</a>
+<a href="Godlys.html">💎 Godlys</a>
+<a href="Legendary.html">🔴 Legendary</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="container">
+
+<div class="title">TOP 50 VALUES</div>
+
+<div class="controls">
+<input type="text" id="search" placeholder="Search..." onkeyup="render()">
+<select id="filter" onchange="render()">
+<option value="all">All</option>
+<option value="Stelars">Stelars</option>
+<option value="Chromas">Chromas</option>
+<option value="Secrets">Secrets</option>
+<option value="Godlys">Godlys</option>
+<option value="Legendary">Legendary</option>
+</select>
+</div>
+
+<p class="count" id="count"></p>
+
+<div id="topList"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const pages = [
+{file:"Stelars.html", type:"Stelars"},
+{file:"Chromas.html", type:"Chromas"},
+{file:"Secrets.html", type:"Secrets"},
+{file:"Godlys.html", type:"Godlys"},
+{file:"Legendary.html", type:"Legendary"}
+]
+
+let allItems = []
+
+async function loadData(){
+
+for(let page of pages){
+
+try{
+let res = await fetch(page.file)
+let text = await res.text()
+
+let doc = new DOMParser().parseFromString(text,"text/html")
+let rows = doc.querySelectorAll("table tr")
+
+rows.forEach((row,i)=>{
+if(i===0) return
+
+let cols = row.querySelectorAll("td")
+
+if(cols.length>=2){
+
+let name = cols[0].innerText
+let value = parseInt(cols[1].innerText.replace(/[^0-9]/g,""))
+
+if(!isNaN(value)){
+allItems.push({name,value,type:page.type})
+}
+
+}
+
+})
+
+}catch(e){
+console.log("error",page.file)
+}
+
+}
+
+allItems.sort((a,b)=>b.value-a.value)
+render()
+
+}
+
+function getStyle(type){
+if(type==="Chromas") return "chroma"
+if(type==="Stelars") return "stelars"
+if(type==="Secrets") return "secret"
+if(type==="Godlys") return "godly"
+return ""
+}
+
+function render(){
+
+let search = document.getElementById("search").value.toLowerCase()
+let filter = document.getElementById("filter").value
+
+let filtered = allItems.filter(item=>{
+return item.name.toLowerCase().includes(search) &&
+(filter==="all" || item.type===filter)
+})
+
+let html=""
+
+filtered.slice(0,50).forEach((item,index)=>{
+
+let medal=""
+let extra=""
+
+if(index===0){ medal="🥇"; extra="top1" }
+else if(index===1){ medal="🥈"; extra="top2" }
+else if(index===2){ medal="🥉"; extra="top3" }
+else{ medal="#"+(index+1) }
+
+html+=`
+<div class="topItem ${getStyle(item.type)} ${extra}">
+<div class="itemInfo">
+<div class="${getStyle(item.type)}">${medal} ${item.name}</div>
+<small style="color:#888">${item.type}</small>
+</div>
+<div class="value">${item.value}</div>
+</div>
+`
+
+})
+
+document.getElementById("topList").innerHTML = html
+
+document.getElementById("count").innerText =
+"Showing " + Math.min(50, filtered.length) + " items"
+
+}
+
+loadData()
+
+</script>
+
+</body>
+</html>

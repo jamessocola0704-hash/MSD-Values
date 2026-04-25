@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legendary Values - MSD Values</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY 🔥 */
+body{
+margin:0;
+font-family:'Fredoka One', cursive;
+background:radial-gradient(circle at top,#1a0000,#0b0b0b);
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:230px;
+height:100vh;
+overflow-y:auto;
+box-sizing:border-box;
+
+background:#111;
+padding:20px 20px 80px 20px;
+border-right:1px solid #222;
+}
+
+.sidebar::-webkit-scrollbar{
+width:6px;
+}
+.sidebar::-webkit-scrollbar-thumb{
+background:linear-gradient(#ff0000,#ff4d4d);
+border-radius:10px;
+}
+
+.sidebar h2{
+margin-top:0;
+text-shadow:0 0 10px #ff4d4d;
+}
+
+.sidebar a{
+display:block;
+color:#ccc;
+text-decoration:none;
+padding:8px;
+border-radius:6px;
+margin-top:3px;
+transition:0.2s;
+}
+
+.sidebar a:hover{
+background:#1a0000;
+transform:translateX(5px);
+box-shadow:0 0 10px #ff000055;
+color:white;
+}
+
+.sidebar h3{
+color:#aaa;
+font-size:14px;
+margin-top:25px;
+}
+
+/* MAIN (CENTRADO REAL) */
+.main{
+margin-left:230px;
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+.mainContent{
+width:100%;
+max-width:900px;
+}
+
+/* TITLE 🔥 */
+.title{
+font-size:65px;
+text-align:center;
+color:#ff2e2e;
+
+text-shadow:
+0 0 10px #ff0000,
+0 0 30px #ff0000,
+0 0 60px #990000;
+
+animation:redGlow 2s infinite alternate;
+}
+
+@keyframes redGlow{
+from{
+text-shadow:0 0 10px #ff0000;
+}
+to{
+text-shadow:
+0 0 25px #ff0000,
+0 0 50px #ff0000,
+0 0 80px #990000;
+}
+}
+
+/* SEARCH */
+#search{
+padding:10px;
+width:280px;
+border-radius:6px;
+border:1px solid #555;
+background:#111;
+color:white;
+margin:20px auto;
+display:block;
+outline:none;
+}
+
+#search:focus{
+border-color:#ff0000;
+box-shadow:0 0 12px #ff0000;
+}
+
+/* SECTION */
+.section{
+font-size:28px;
+margin-top:35px;
+margin-bottom:10px;
+color:#ff4d4d;
+text-align:center;
+text-shadow:0 0 10px #ff0000;
+}
+
+/* TABLE 🔥 */
+table{
+width:100%;
+border-collapse:collapse;
+background:#111;
+border-radius:12px;
+overflow:hidden;
+margin-bottom:40px;
+
+border:2px solid #ff0000;
+
+box-shadow:
+0 0 15px #ff000033,
+0 0 40px #99000033;
+}
+
+/* CELLS */
+th, td{
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+th{
+color:#ff4d4d;
+}
+
+/* CENTER */
+td:nth-child(2),
+td:nth-child(3),
+th:nth-child(2),
+th:nth-child(3){
+text-align:center;
+}
+
+/* TEXT */
+.legendary{
+color:#ff2e2e;
+font-weight:bold;
+text-shadow:0 0 10px #ff0000;
+}
+
+/* HOVER 🔥 */
+tr:hover{
+background:#1a0000;
+box-shadow:0 0 12px #ff000055 inset;
+}
+
+/* 🔥 BORDE ANIMADO SUAVE */
+table:hover{
+animation:borderPulse 2s infinite;
+}
+
+@keyframes borderPulse{
+0%{box-shadow:0 0 10px #ff000033;}
+50%{box-shadow:0 0 25px #ff0000;}
+100%{box-shadow:0 0 10px #ff000033;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>MSD Values</h2>
+
+<h3>MAIN</h3>
+
+<a href="Index.html">🏠 Home</a>
+<a href="Unique.html">💠 Unique</a>
+<a href="Inventory.html">📦 Inventory</a>
+<a href="Top.html">🏆 Top Items</a>
+<a href="Players.html">👑 Top Players</a>
+
+<h3>Community</h3>
+
+<a href="https://www.roblox.com/groups/33779394" target="_blank">
+👥 Roblox Group
+</a>
+
+<h3>CATEGORIES</h3>
+
+<a href="Stelars.html">⭐ Stelars</a>
+<a href="Chromas.html">🌈 Chromas</a>
+<a href="Secrets.html">🔮 Secrets</a>
+<a href="Godlys.html">💎 Godlys</a>
+<a href="Legendary.html">🔴 Legendary</a>
+
+</div>
+
+<div class="main">
+<div class="mainContent">
+
+<div class="title">Legendary Values</div>
+
+<input type="text" id="search" placeholder="Search item..." onkeyup="searchItem()">
+
+<div class="section">🔪 Knifes</div>
+<table class="searchTable">
+<tr><th>Name</th><th>Value</th><th>Demand</th></tr>
+
+<tr><td class="legendary">Sword</td><td>460</td><td>5</td></tr>
+<tr><td class="legendary">Pizza Knife</td><td>400</td><td>3</td></tr>
+<tr><td class="legendary">Player Sword</td><td>490</td><td>4</td></tr>
+<tr><td class="legendary">Starlight</td><td>378</td><td>2</td></tr>
+<tr><td class="legendary">Rainbow Knife</td><td>320</td><td>2</td></tr>
+<tr><td class="legendary">Polaris</td><td>190</td><td>1</td></tr>
+<tr><td class="legendary">Paper Sword</td><td>492</td><td>4</td></tr>
+<tr><td class="legendary">Marine Dagger</td><td>417</td><td>3</td></tr>
+<tr><td class="legendary">Ruler</td><td>469</td><td>2</td></tr>
+<tr><td class="legendary">Baguette</td><td>460</td><td>5</td></tr>
+<tr><td class="legendary">Battle Axe</td><td>396</td><td>5</td></tr>
+<tr><td class="legendary">Bat</td><td>412</td><td>5</td></tr>
+<tr><td class="legendary">Wooden Katana</td><td>469</td><td>6</td></tr>
+<tr><td class="legendary">Ghostfire Dagger</td><td>470</td><td>5</td></tr>
+<tr><td class="legendary">Kunai</td><td>407</td><td>3</td></tr>
+<tr><td class="legendary">Xmas Sword</td><td>339</td><td>4</td></tr>
+<tr><td class="legendary">Code Knife</td><td>387</td><td>4</td></tr>
+<tr><td class="legendary">Stars Sword</td><td>453</td><td>2</td></tr>
+<tr><td class="legendary">VIP Blade</td><td>360</td><td>5</td></tr>
+<tr><td class="legendary">Claws</td><td>494</td><td>6</td></tr>
+
+</table>
+
+<div class="section">🔫 Weapons</div>
+<table class="searchTable">
+<tr><th>Name</th><th>Value</th><th>Demand</th></tr>
+
+<tr><td class="legendary">Chaotic Railgun</td><td>416</td><td>4</td></tr>
+<tr><td class="legendary">Shark Gun VIP</td><td>360</td><td>5</td></tr>
+<tr><td class="legendary">Sniper</td><td>310</td><td>2</td></tr>
+<tr><td class="legendary">Rainbow Revolver</td><td>350</td><td>3</td></tr>
+<tr><td class="legendary">Low Poly Gun</td><td>300</td><td>2</td></tr>
+<tr><td class="legendary">Lava Revolver</td><td>234</td><td>3</td></tr>
+<tr><td class="legendary">Darkbringer</td><td>455</td><td>4</td></tr>
+
+</table>
+
+</div>
+</div>
+
+<script>
+function searchItem(){
+let input = document.getElementById("search").value.toLowerCase()
+let tables = document.getElementsByClassName("searchTable")
+
+for(let t=0; t<tables.length; t++){
+let tr = tables[t].getElementsByTagName("tr")
+
+for(let i=1; i<tr.length; i++){
+let td = tr[i].getElementsByTagName("td")[0]
+
+if(td){
+let txt = td.textContent || td.innerText
+tr[i].style.display =
+txt.toLowerCase().includes(input) ? "" : "none"
+}
+}
+}
+}
+</script>
+
+</body>
+</html>

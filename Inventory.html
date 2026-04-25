@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory Value - MSD</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+body{
+margin:0;
+font-family:'Fredoka One', cursive;
+background:radial-gradient(circle at top,#111,#0b0b0b);
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:240px;
+height:100vh;
+background:#111;
+padding:20px;
+border-right:1px solid #222;
+overflow-y:auto;
+box-sizing:border-box;
+}
+
+.sidebar a{
+display:block;
+padding:8px;
+color:#ccc;
+text-decoration:none;
+border-radius:6px;
+}
+.sidebar a:hover{
+background:#1a1a1a;
+transform:translateX(5px);
+}
+
+/* MAIN */
+.main{
+margin-left:240px;
+min-height:100vh;
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+/* CONTENEDOR */
+.container{
+width:100%;
+max-width:1000px;
+}
+
+/* TITLE */
+.title{
+font-size:60px;
+text-align:center;
+
+background:linear-gradient(90deg,#ff4fa3,#00d4ff,#ff4fa3);
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:rgbMove 5s linear infinite;
+}
+
+@keyframes rgbMove{
+0%{background-position:0%}
+100%{background-position:300%}
+}
+
+/* LAYOUT */
+.layout{
+display:grid;
+grid-template-columns:260px 1fr;
+gap:30px;
+}
+
+/* INSTRUCCIONES */
+.instructions{
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(6px);
+padding:15px;
+border-radius:10px;
+border:1px solid #222;
+}
+
+/* INPUTS */
+.inputs{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:10px;
+}
+
+input{
+padding:10px;
+border-radius:6px;
+border:1px solid #333;
+background:#111;
+color:white;
+}
+
+input:focus{
+outline:none;
+box-shadow:0 0 10px #00d4ff;
+}
+
+/* BOTON */
+button{
+padding:10px 15px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-family:'Fredoka One';
+background:linear-gradient(90deg,#ff4fa3,#00d4ff);
+color:white;
+}
+
+button:hover{
+box-shadow:0 0 10px #00d4ff;
+}
+
+/* SUGERENCIAS */
+.suggestions{
+background:#111;
+border:1px solid #222;
+border-radius:8px;
+max-height:150px;
+overflow-y:auto;
+margin-bottom:10px;
+}
+
+.suggestions div{
+padding:8px;
+cursor:pointer;
+}
+.suggestions div:hover{
+background:#1a1a1a;
+}
+
+/* ITEMS */
+.item{
+margin-top:10px;
+padding:10px;
+background:#111;
+border-radius:8px;
+border:1px solid #222;
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:0.2s;
+}
+
+.item:hover{
+box-shadow:0 0 15px #ff4fa3;
+}
+
+/* BOTON ELIMINAR */
+.removeBtn{
+background:#ff4d4d;
+border:none;
+color:white;
+padding:5px 8px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.removeBtn:hover{
+box-shadow:0 0 10px red;
+}
+
+/* TOTAL */
+.total{
+margin-top:20px;
+font-size:22px;
+color:#00d4ff;
+}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+.layout{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+<h2>MSD Values</h2>
+
+<h3>Main</h3>
+<a href="Index.html">🏠 Home</a>
+<a href="Unique.html">💠 Unique</a>
+<a href="Inventory.html">📦 Inventory</a>
+<a href="Top.html">🏆 Top Items</a>
+<a href="Players.html">👑 Top Players</a>
+
+<h3>Categorías</h3>
+<a href="Stelars.html">⭐ Stelars</a>
+<a href="Chromas.html">🌈 Chromas</a>
+<a href="Secrets.html">🔮 Secrets</a>
+<a href="Godlys.html">💎 Godlys</a>
+<a href="Legendary.html">🔴 Legendary</a>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="container">
+
+<div class="title">Inventory Value</div>
+
+<div class="layout">
+
+<!-- INSTRUCCIONES -->
+<div class="instructions">
+<b>¿Cómo usar?</b><br><br>
+1. Escribe un item<br>
+2. Selecciónalo<br>
+3. Pon cantidad<br>
+4. Dale agregar<br><br>
+❌ Puedes borrar items si te equivocas
+</div>
+
+<!-- CALCULADORA -->
+<div>
+
+<div class="inputs">
+<input type="text" id="itemName" placeholder="Buscar item..." onkeyup="showSuggestions()">
+<input type="number" id="qty" placeholder="Cantidad">
+<button onclick="addItem()">Agregar</button>
+</div>
+
+<div id="suggestions" class="suggestions"></div>
+
+<div id="list"></div>
+
+<div class="total">
+Total: <span id="total">0</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const pages = [
+"Stelars.html",
+"Chromas.html",
+"Secrets.html",
+"Godlys.html",
+"Legendary.html"
+]
+
+let values = {}
+let total = 0
+
+/* CARGAR ITEMS */
+async function loadValues(){
+
+for(let file of pages){
+
+try{
+let res = await fetch(file)
+let text = await res.text()
+
+let doc = new DOMParser().parseFromString(text,"text/html")
+let rows = doc.querySelectorAll("table tr")
+
+rows.forEach((row,i)=>{
+if(i===0) return
+
+let cols = row.querySelectorAll("td")
+
+if(cols.length >= 2){
+
+let name = cols[0].innerText.trim()
+let value = parseInt(cols[1].innerText.replace(/[^0-9]/g,""))
+
+if(name && !isNaN(value)){
+values[name] = value
+}
+
+}
+
+})
+
+}catch(e){
+console.log("Error:", file)
+}
+
+}
+
+}
+
+/* SUGERENCIAS */
+function showSuggestions(){
+
+let input = document.getElementById("itemName").value.toLowerCase()
+let box = document.getElementById("suggestions")
+
+box.innerHTML = ""
+
+if(input.length < 1) return
+
+Object.keys(values)
+.filter(name => name.toLowerCase().includes(input))
+.slice(0,6)
+.forEach(name => {
+
+let div = document.createElement("div")
+div.innerText = name
+
+div.onclick = () => {
+document.getElementById("itemName").value = name
+box.innerHTML = ""
+}
+
+box.appendChild(div)
+
+})
+
+}
+
+/* AGREGAR ITEM */
+function addItem(){
+
+let name = document.getElementById("itemName").value
+let qty = parseInt(document.getElementById("qty").value)
+
+if(!values[name]){
+alert("Item no encontrado")
+return
+}
+
+if(!qty || qty <= 0){
+alert("Cantidad inválida")
+return
+}
+
+let value = values[name] * qty
+total += value
+
+let div = document.createElement("div")
+div.className = "item"
+
+div.innerHTML = `
+<span>${name} x${qty}</span>
+<div>
+<span style="margin-right:10px">${value}</span>
+<button class="removeBtn">❌</button>
+</div>
+`
+
+/* ELIMINAR ITEM */
+div.querySelector(".removeBtn").onclick = () => {
+
+div.style.opacity = "0"
+div.style.transform = "scale(0.9)"
+
+setTimeout(()=>{
+div.remove()
+total -= value
+document.getElementById("total").innerText = total
+},200)
+
+}
+
+document.getElementById("list").appendChild(div)
+document.getElementById("total").innerText = total
+
+}
+
+loadValues()
+
+</script>
+
+</body>
+</html>

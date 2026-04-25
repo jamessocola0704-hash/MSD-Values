@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stelars - MSD Values</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY (FONDO MEJORADO 🔥) */
+body{
+margin:0;
+font-family:'Fredoka One', cursive;
+background:radial-gradient(circle at top,#1a1400,#0b0b0b);
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:230px;
+height:100vh;
+overflow-y:auto;
+box-sizing:border-box;
+
+background:#111;
+padding:20px 20px 80px 20px;
+border-right:1px solid #222;
+}
+
+/* SCROLL */
+.sidebar::-webkit-scrollbar{
+width:6px;
+}
+.sidebar::-webkit-scrollbar-thumb{
+background:linear-gradient(#FFD700,#ff4fa3);
+border-radius:10px;
+}
+
+/* TITLE SIDEBAR */
+.sidebar h2{
+margin-top:0;
+text-shadow:0 0 10px #FFD700;
+}
+
+/* LINKS */
+.sidebar a{
+display:block;
+color:#ccc;
+text-decoration:none;
+padding:8px;
+border-radius:6px;
+margin-top:4px;
+transition:0.2s;
+}
+
+.sidebar a:hover{
+background:#1a1a1a;
+transform:translateX(6px);
+box-shadow:0 0 10px #FFD70055;
+color:white;
+}
+
+/* SECTIONS */
+.sidebar h3{
+color:#888;
+margin-top:20px;
+}
+
+/* MAIN (CENTRADO REAL 🔥) */
+.main{
+margin-left:230px;
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+.mainContent{
+width:100%;
+max-width:900px;
+}
+
+/* TITLE */
+.title{
+font-size:60px;
+text-align:center;
+color:#FFD700;
+
+text-shadow:
+0 0 10px #FFD700,
+0 0 30px #ffcc00,
+0 0 60px #ffaa00;
+
+animation:goldGlow 2s infinite alternate;
+}
+
+/* ANIMACION */
+@keyframes goldGlow{
+from{
+text-shadow:0 0 10px #FFD700;
+}
+to{
+text-shadow:
+0 0 25px #FFD700,
+0 0 50px #ffcc00,
+0 0 80px #ffaa00;
+}
+}
+
+/* SEARCH */
+#search{
+padding:10px;
+width:280px;
+border-radius:6px;
+border:1px solid #555;
+background:#111;
+color:white;
+margin:20px auto;
+display:block;
+outline:none;
+}
+
+#search:focus{
+box-shadow:0 0 12px #FFD700;
+}
+
+/* SECTION */
+h2{
+color:#FFD700;
+margin-top:35px;
+text-align:center;
+text-shadow:0 0 10px #FFD700;
+}
+
+/* TABLE */
+table{
+width:100%;
+border-collapse:collapse;
+background:#111;
+border-radius:12px;
+overflow:hidden;
+margin-bottom:40px;
+
+border:2px solid #FFD700;
+
+box-shadow:
+0 0 15px #FFD70033,
+0 0 35px #ffaa0033;
+}
+
+/* CELLS */
+th, td{
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+th{
+color:#FFD700;
+}
+
+/* CENTER */
+td:nth-child(2),
+td:nth-child(3),
+th:nth-child(2),
+th:nth-child(3){
+text-align:center;
+}
+
+/* TEXT */
+.stelars{
+color:#FFD700;
+font-weight:bold;
+text-shadow:0 0 8px #FFD700;
+}
+
+/* HOVER */
+tr:hover{
+background:#1a1600;
+box-shadow:0 0 12px #FFD70055 inset;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2><a href="Index.html" style="color:white;text-decoration:none;">MSD Values</a></h2>
+
+<h3>Main</h3>
+
+<a href="Index.html">🏠 Home</a>
+<a href="Unique.html">💠 Unique</a>
+<a href="Inventory.html">📦 Inventory</a>
+<a href="Top.html">🏆 Top Items</a>
+<a href="Players.html">👑 Top Players</a>
+
+<h3>Community</h3>
+
+<a href="https://www.roblox.com/groups/33779394" target="_blank">
+👥 Roblox Group
+</a>
+
+<h3>CATEGORIES</h3>
+
+<a href="Stelars.html">⭐ Stelars</a>
+<a href="Chromas.html">🌈 Chromas</a>
+<a href="Secrets.html">🔮 Secrets</a>
+<a href="Godlys.html">💎 Godlys</a>
+<a href="Legendary.html">🔴 Legendary</a>
+
+</div>
+
+<div class="main">
+<div class="mainContent">
+
+<div class="title">Stelars Values</div>
+
+<input type="text" id="search" placeholder="Search weapon..." onkeyup="searchItem()">
+
+<h2>🔪 Knifes</h2>
+
+<table class="searchTable">
+<tr><th>Knife Name</th><th>Value</th><th>Demand</th><th>How to get it</th></tr>
+
+<tr><td class="stelars">Golden Knife</td><td>1024</td><td>10</td><td>Reach Top 3 global points</td></tr>
+<tr><td class="stelars">Scythe!</td><td>3107</td><td>10</td><td>Reach Top 1 global points</td></tr>
+<tr><td class="stelars">Slasher Gold</td><td>1700</td><td>10</td><td>Reach Top 2 global points</td></tr>
+<tr><td class="stelars">Rainbowseer</td><td>830</td><td>7</td><td>Wilson Shop</td></tr>
+<tr><td class="stelars">Classic Hammer</td><td>977</td><td>10</td><td>Get Contributor rank</td></tr>
+<tr><td class="stelars">Glitched Scythe</td><td>3925</td><td>10</td><td>Report a serious bug</td></tr>
+<tr><td class="stelars">Edd Scythe</td><td>975</td><td>8</td><td>Given by Eddxrz</td></tr>
+
+</table>
+
+<h2>🔫 Weapons</h2>
+
+<table class="searchTable">
+<tr><th>Weapon Name</th><th>Value</th><th>Demand</th><th>How to get it</th></tr>
+
+<tr><td class="stelars">Edd Laser</td><td>913</td><td>7</td><td>Given by Eddxrz</td></tr>
+<tr><td class="stelars">Aqua Blaster</td><td>1134</td><td>6</td><td>Wilson Shop</td></tr>
+
+</table>
+
+<h2>✨ Others</h2>
+
+<table class="searchTable">
+<tr><th>Name</th><th>Value</th><th>Demand</th><th>How to get it</th></tr>
+
+<tr><td class="stelars">AdminSkins</td><td>1000</td><td>-</td><td>Blehh</td></tr>
+<tr><td class="stelars">¡Star Maniac!</td><td>500</td><td>10</td><td>Spends 750,000 coins</td></tr>
+<tr><td class="stelars">I Miss The Quiet</td><td>930</td><td>10</td><td>Wilson Shop</td></tr>
+<tr><td class="stelars">Dual Wield</td><td>100</td><td>5</td><td>Tobin Shop</td></tr>
+<tr><td class="stelars">Edd Tag</td><td>-</td><td>-100</td><td>Tag only by Eddxrz</td></tr>
+
+</table>
+
+</div>
+</div>
+
+<script>
+function searchItem(){
+let input = document.getElementById("search").value.toLowerCase()
+let tables = document.getElementsByClassName("searchTable")
+
+for(let t=0; t<tables.length; t++){
+let tr = tables[t].getElementsByTagName("tr")
+
+for(let i=1;i<tr.length;i++){
+let td = tr[i].getElementsByTagName("td")[0]
+
+if(td){
+let txt = td.textContent || td.innerText
+tr[i].style.display =
+txt.toLowerCase().includes(input) ? "" : "none"
+}
+}
+}
+}
+</script>
+
+</body>
+</html>

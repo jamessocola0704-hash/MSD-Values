@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chromas - MSD Values</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY (FONDO MEJORADO) */
+body{
+margin:0;
+font-family:'Fredoka One', cursive;
+background:radial-gradient(circle at top,#140014,#0b0b0b);
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:230px;
+height:100vh;
+overflow-y:auto;
+box-sizing:border-box;
+
+background:#111;
+padding:20px 20px 80px 20px;
+border-right:1px solid #222;
+}
+
+/* SCROLL */
+.sidebar::-webkit-scrollbar{
+width:6px;
+}
+.sidebar::-webkit-scrollbar-thumb{
+background:linear-gradient(red,orange,yellow,lime,cyan,blue,violet);
+border-radius:10px;
+}
+
+/* TITLE SIDEBAR */
+.sidebar h2{
+margin-top:0;
+text-shadow:0 0 10px cyan;
+}
+
+/* LINKS */
+.sidebar a{
+display:block;
+color:#ccc;
+text-decoration:none;
+padding:8px;
+border-radius:6px;
+margin-top:4px;
+transition:0.2s;
+}
+
+.sidebar a:hover{
+background:#1a1a1a;
+transform:translateX(6px);
+box-shadow:0 0 10px cyan;
+color:white;
+}
+
+/* SECTIONS */
+.sidebar h3{
+color:#888;
+margin-top:20px;
+}
+
+/* MAIN (CENTRADO REAL) */
+.main{
+margin-left:230px;
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+.mainContent{
+width:100%;
+max-width:900px;
+}
+
+/* TITLE */
+.title{
+font-size:60px;
+text-align:center;
+
+background:linear-gradient(
+90deg,
+red,orange,yellow,lime,cyan,blue,violet,red
+);
+
+background-size:400%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:rainbow 6s linear infinite;
+}
+
+/* ANIMACION */
+@keyframes rainbow{
+0%{background-position:0%}
+100%{background-position:400%}
+}
+
+/* SEARCH */
+#search{
+padding:10px;
+width:280px;
+border-radius:6px;
+border:1px solid #555;
+background:#111;
+color:white;
+margin:20px auto;
+display:block;
+outline:none;
+}
+
+#search:focus{
+box-shadow:0 0 12px cyan;
+}
+
+/* SECTION */
+.section{
+font-size:26px;
+margin-top:35px;
+margin-bottom:10px;
+text-align:center;
+
+background:linear-gradient(90deg,cyan,blue,violet);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* TABLE */
+table{
+width:100%;
+border-collapse:collapse;
+background:#111;
+border-radius:12px;
+overflow:hidden;
+margin-bottom:40px;
+
+border:2px solid transparent;
+
+background:
+linear-gradient(#111,#111) padding-box,
+linear-gradient(
+90deg,
+red,orange,yellow,lime,cyan,blue,violet
+) border-box;
+
+box-shadow:
+0 0 15px rgba(0,255,255,0.15),
+0 0 30px rgba(140,0,255,0.15);
+}
+
+/* CELLS */
+th, td{
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+/* CENTER */
+td:nth-child(2),
+td:nth-child(3),
+th:nth-child(2),
+th:nth-child(3){
+text-align:center;
+}
+
+/* CHROMA TEXT */
+.chroma{
+background:linear-gradient(
+90deg,
+red,orange,yellow,lime,cyan,blue,violet
+);
+
+background-size:300%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:rainbow 4s linear infinite;
+
+font-weight:bold;
+}
+
+/* HOVER */
+tr:hover{
+background:linear-gradient(
+90deg,
+rgba(255,0,0,0.1),
+rgba(255,165,0,0.1),
+rgba(255,255,0,0.1),
+rgba(0,255,0,0.1),
+rgba(0,255,255,0.1),
+rgba(0,0,255,0.1),
+rgba(238,130,238,0.1)
+);
+
+background-size:400%;
+animation:rainbow 4s linear infinite;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2><a href="Index.html" style="color:white;text-decoration:none;">MSD Values</a></h2>
+
+<h3>Main</h3>
+
+<a href="Index.html">🏠 Home</a>
+<a href="Unique.html">💠 Unique</a>
+<a href="Inventory.html">📦 Inventory</a>
+<a href="Top.html">🏆 Top Items</a>
+<a href="Players.html">👑 Top Players</a>
+
+<h3>Community</h3>
+
+<a href="https://www.roblox.com/groups/33779394" target="_blank">
+👥 Roblox Group
+</a>
+
+<h3>CATEGORIES</h3>
+
+<a href="Stelars.html">⭐ Stelars</a>
+<a href="Chromas.html">🌈 Chromas</a>
+<a href="Secrets.html">🔮 Secrets</a>
+<a href="Godlys.html">💎 Godlys</a>
+<a href="Legendary.html">🔴 Legendary</a>
+
+</div>
+
+<div class="main">
+<div class="mainContent">
+
+<div class="title">Chroma Values</div>
+
+<input type="text" id="search" placeholder="Search weapon..." onkeyup="searchItem()">
+
+<h2 class="section">🔪 Knifes</h2>
+
+<table class="searchTable">
+<tr><th>Name</th><th>Value</th><th>Demand</th><th>How to get it</th></tr>
+
+<tr><td class="chroma">Chroma Gemstone</td><td>2840</td><td>7</td><td>Craft: x2 Gemstone, x1 Rainbow Cosmic Fire, x1 Rainbow Flames</td></tr>
+<tr><td class="chroma">Chroma Knife</td><td>2700</td><td>9</td><td>Craft: blehh</td></tr>
+<tr><td class="chroma">Chroma Overseer</td><td>2852</td><td>7</td><td>Craft: multiple overseers + Rainbow Cosmic Fire</td></tr>
+
+</table>
+
+<h2 class="section">🔫 Weapons</h2>
+
+<table class="searchTable">
+<tr><th>Name</th><th>Value</th><th>Demand</th><th>How to get it</th></tr>
+
+<tr><td class="chroma">Chroma Luger</td><td>2204</td><td>7</td><td>Craft: multiple Lugers + Rainbow Flames</td></tr>
+
+</table>
+
+<h2 class="section">✨ Others</h2>
+
+<table class="searchTable">
+<tr><th>Name</th><th>Value</th><th>Demand</th><th>How to get it</th></tr>
+
+<tr><td class="chroma">Rainbow Tag</td><td>990</td><td>5</td><td>Wilson Shop</td></tr>
+<tr><td class="chroma">Rainbow Donor Tag</td><td>995</td><td>6</td><td>Donate 1000 Robux</td></tr>
+<tr><td class="chroma">Star Radio Chroma</td><td>4510</td><td>-</td><td>Item of the Month (old)</td></tr>
+
+</table>
+
+</div>
+</div>
+
+<script>
+function searchItem(){
+let input = document.getElementById("search").value.toLowerCase()
+let tables = document.getElementsByClassName("searchTable")
+
+for(let t=0;t<tables.length;t++){
+let tr = tables[t].getElementsByTagName("tr")
+
+for(let i=1;i<tr.length;i++){
+let td = tr[i].getElementsByTagName("td")[0]
+
+if(td){
+let txt = td.textContent || td.innerText
+tr[i].style.display =
+txt.toLowerCase().includes(input) ? "" : "none"
+}
+}
+}
+}
+</script>
+
+</body>
+</html>

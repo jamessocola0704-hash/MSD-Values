@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Godly Values - MSD Values</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+body{
+margin:0;
+font-family:'Fredoka One', cursive;
+background:radial-gradient(circle at top,#140014,#0b0b0b);
+color:white;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:230px;
+height:100vh;
+overflow-y:auto;
+background:#111;
+padding:20px;
+border-right:1px solid #222;
+}
+
+.sidebar h2{
+text-shadow:0 0 10px #ff3ea5, 0 0 20px #a020f0;
+}
+
+.sidebar a{
+display:block;
+color:#ccc;
+text-decoration:none;
+padding:8px;
+border-radius:6px;
+margin-top:4px;
+transition:0.2s;
+}
+
+.sidebar a:hover{
+background:#1a1a1a;
+transform:translateX(6px);
+box-shadow:0 0 10px #ff3ea3, 0 0 15px #a020f0;
+color:white;
+}
+
+.sidebar h3{
+color:#888;
+margin-top:20px;
+}
+
+/* MAIN */
+.main{
+margin-left:230px;
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+.mainContent{
+max-width:900px;
+width:100%;
+}
+
+/* TITLE */
+h1{
+text-align:center;
+color:#ff3ea5;
+
+text-shadow:
+0 0 10px #ff3ea5,
+0 0 25px #ff3ea5,
+0 0 50px #a020f0,
+0 0 70px #a020f0;
+
+animation:godlyGlow 3s infinite alternate;
+}
+
+@keyframes godlyGlow{
+from{
+text-shadow:
+0 0 10px #ff3ea5,
+0 0 20px #ff3ea5,
+0 0 30px #a020f0;
+}
+to{
+text-shadow:
+0 0 20px #ff3ea5,
+0 0 40px #a020f0,
+0 0 70px #a020f0;
+}
+}
+
+/* SEARCH */
+#search{
+display:block;
+margin:0 auto 30px auto;
+padding:10px;
+width:280px;
+border-radius:6px;
+border:1px solid #444;
+background:#111;
+color:white;
+}
+
+#search:focus{
+border-color:#a020f0;
+box-shadow:0 0 10px #a020f0;
+}
+
+/* SECTION */
+.section{
+text-align:center;
+color:#d86cff;
+margin:20px 0 10px;
+text-shadow:0 0 10px #a020f0;
+}
+
+/* TABLE */
+table{
+width:100%;
+border-collapse:collapse;
+background:#111;
+border-radius:10px;
+overflow:hidden;
+margin-bottom:40px;
+
+border:2px solid transparent;
+
+background:
+linear-gradient(#111,#111) padding-box,
+linear-gradient(90deg,#ff3ea5,#a020f0) border-box;
+
+box-shadow:
+0 0 10px #ff3ea5,
+0 0 25px #a020f0;
+}
+
+th, td{
+padding:12px;
+border-bottom:1px solid #222;
+}
+
+th{
+color:#ccc;
+}
+
+/* CENTER */
+td:nth-child(2),
+td:nth-child(3){
+text-align:center;
+}
+
+/* GODLY TEXT */
+.godly{
+color:#ff3ea5;
+font-weight:bold;
+
+text-shadow:
+0 0 5px #ff3ea5,
+0 0 10px #ff3ea5,
+0 0 20px #a020f0;
+}
+
+/* HOVER */
+tr:hover{
+background:#1a0a1f;
+
+box-shadow:
+inset 0 0 10px #ff3ea5,
+inset 0 0 20px #a020f0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>MSD Values</h2>
+
+<h3>Main</h3>
+<a href="Index.html">🏠 Home</a>
+<a href="Unique.html">💠 Unique</a>
+<a href="Inventory.html">📦 Inventory</a>
+<a href="Top.html">🏆 Top Items</a>
+<a href="Players.html">👑 Top Players</a>
+
+<h3>Community</h3>
+<a href="https://www.roblox.com/groups/33779394" target="_blank">👥 Roblox Group</a>
+
+<h3>Categories</h3>
+<a href="Stelars.html">⭐ Stelars</a>
+<a href="Chromas.html">🌈 Chromas</a>
+<a href="Secrets.html">🔮 Secrets</a>
+<a href="Godlys.html">💎 Godlys</a>
+<a href="Legendary.html">🔴 Legendary</a>
+</div>
+
+<div class="main">
+<div class="mainContent">
+
+<h1>Godly Values</h1>
+
+<input type="text" id="search" placeholder="Search weapon..." onkeyup="searchItem()">
+
+
+<!-- KNIFES -->
+<div class="section">🔪 Knifes</div>
+<table class="searchTable">
+<tr><th>Name</th><th>Value</th><th>Demand</th></tr>
+
+<tr><td class="godly">Star Trident</td><td>440</td><td>2</td></tr>
+<tr><td class="godly">The Fish</td><td>630</td><td>2</td></tr>
+<tr><td class="godly">Crimson</td><td>240</td><td>3</td></tr>
+<tr><td class="godly">Hallow Blade</td><td>780</td><td>6</td></tr>
+<tr><td class="godly">Dragon Sword</td><td>720</td><td>4</td></tr>
+<tr><td class="godly">Ice Dragon Sword</td><td>945</td><td>6</td></tr>
+<tr><td class="godly">Leek Knife</td><td>217</td><td>3</td></tr>
+<tr><td class="godly">Illumina</td><td>698</td><td>7</td></tr>
+<tr><td class="godly">Gemstone</td><td>500</td><td>7</td></tr>
+<tr><td class="godly">Huge Key</td><td>390</td><td>3</td></tr>
+<tr><td class="godly">Mad Knife</td><td>2</td><td>0</td></tr>
+<tr><td class="godly">Bat Scythe</td><td>468</td><td>2</td></tr>
+<tr><td class="godly">Sea Sword</td><td>276</td><td>1</td></tr>
+<tr><td class="godly">Unicorn Blade</td><td>512</td><td>4</td></tr>
+<tr><td class="godly">Three Sword</td><td>631</td><td>5</td></tr>
+<tr><td class="godly">Radioactive Sword</td><td>594</td><td>5</td></tr>
+<tr><td class="godly">Daemonshank</td><td>1111</td><td>7</td></tr>
+<tr><td class="godly">Azure Slayer</td><td>510</td><td>4</td></tr>
+<tr><td class="godly">Apocalypse Axe</td><td>1000</td><td>8</td></tr>
+<tr><td class="godly">Snow Blade</td><td>800</td><td>7</td></tr>
+<tr><td class="godly">Saw</td><td>240</td><td>3</td></tr>
+<tr><td class="godly">Golden Frying Pan</td><td>530</td><td>6</td></tr>
+<tr><td class="godly">Top Sword</td><td>954</td><td>1</td></tr>
+<tr><td class="godly">Star Hammer</td><td>770</td><td>5</td></tr>
+<tr><td class="godly">Watermelon Sword</td><td>700</td><td>4</td></tr>
+<tr><td class="godly">Booster Blade</td><td>800</td><td>9</td></tr>
+<tr><td class="godly">Halloween Scythe</td><td>900</td><td>2</td></tr>
+<tr><td class="godly">Red Candy Cane</td><td>800</td><td>5</td></tr>
+<tr><td class="godly">Blue Candy Cane</td><td>800</td><td>5</td></tr>
+<tr><td class="godly">Purple Candy Cane</td><td>800</td><td>5</td></tr>
+<tr><td class="godly">Orange Candy Cane</td><td>800</td><td>5</td></tr>
+<tr><td class="godly">Green Candy Cane</td><td>800</td><td>5</td></tr>
+<tr><td class="godly">Pink Candy Cane</td><td>800</td><td>5</td></tr>
+<tr><td class="godly">Volcano Sword</td><td>750</td><td>7</td></tr>
+
+</table>
+
+<!-- WEAPONS -->
+<div class="section">🔫 Weapons</div>
+<table class="searchTable">
+<tr><th>Name</th><th>Value</th><th>Demand</th></tr>
+
+<tr><td class="godly">Golden Luger</td><td>500</td><td>4</td></tr>
+<tr><td class="godly">Purple Luger</td><td>634</td><td>4</td></tr>
+<tr><td class="godly">Green Luger</td><td>610</td><td>7</td></tr>
+<tr><td class="godly">Blue Luger</td><td>575</td><td>4</td></tr>
+<tr><td class="godly">Orange Luger</td><td>500</td><td>2</td></tr>
+<tr><td class="godly">Booster Luger</td><td>760</td><td>6</td></tr>
+<tr><td class="godly">Golden Pixel Gun</td><td>520</td><td>7</td></tr>
+<tr><td class="godly">Silenced Luger</td><td>448</td><td>5</td></tr>
+<tr><td class="godly">BIG Gun</td><td>564</td><td>5</td></tr>
+<tr><td class="godly">Arcade Luger</td><td>480</td><td>6</td></tr>
+<tr><td class="godly">Cat Gun</td><td>364</td><td>4</td></tr>
+<tr><td class="godly">Shark Gun</td><td>340</td><td>5</td></tr>
+<tr><td class="godly">Toy Blaster</td><td>274</td><td>6</td></tr>
+<tr><td class="godly">Rainbow Blaster</td><td>424</td><td>4</td></tr>
+<tr><td class="godly">Gaster Blaster</td><td>680</td><td>8</td></tr>
+<tr><td class="godly">Purple Lasergun</td><td>586</td><td>3</td></tr>
+<tr><td class="godly">Red Lasergun</td><td>550</td><td>3</td></tr>
+<tr><td class="godly">Blue Lasergun</td><td>550</td><td>4</td></tr>
+<tr><td class="godly">Pixel Diamond</td><td>250</td><td>2</td></tr>
+
+</table>
+
+<!-- OTHERS -->
+<div class="section">✨ Others</div>
+<table class="searchTable">
+<tr><th>Name</th><th>Value</th><th>Demand</th></tr>
+
+<tr><td class="godly">Rainbow Flames</td><td>200</td><td>4</td></tr>
+<tr><td class="godly">Rainbow Cosmic Fire</td><td>270</td><td>7</td></tr>
+<tr><td class="godly">Star Friend</td><td>170</td><td>3</td></tr>
+<tr><td class="godly">Bomb Pet</td><td>210</td><td>3</td></tr>
+<tr><td class="godly">Custom Pet</td><td>150</td><td>2</td></tr>
+<tr><td class="godly">Pixel Fairy</td><td>178</td><td>2</td></tr>
+<tr><td class="godly">Companion</td><td>40</td><td>1</td></tr>
+<tr><td class="godly">Pixel Pheonix</td><td>100</td><td>1</td></tr>
+<tr><td class="godly">Lucky Cat</td><td>380</td><td>4</td></tr>
+<tr><td class="godly">Peashooter Pet</td><td>400</td><td>6</td></tr>
+<tr><td class="godly">Fake Bomb</td><td>120</td><td>2</td></tr>
+<tr><td class="godly">Silly Guitar</td><td>60</td><td>5</td></tr>
+<tr><td class="godly">Duck</td><td>500</td><td>7</td></tr>
+<tr><td class="godly">Golden Apple</td><td>78</td><td>6</td></tr>
+<tr><td class="godly">Builder Boy Plush</td><td>100</td><td>2</td></tr>
+<tr><td class="godly">Chaos Idol Tag</td><td>400</td><td>3</td></tr>
+<tr><td class="godly">Idol Tag</td><td>250</td><td>4</td></tr>
+<tr><td class="godly">VIP Tag</td><td>114</td><td>3</td></tr>
+<tr><td class="godly">Golden Ingot</td><td>127</td><td>3</td></tr>
+<tr><td class="godly">Subspace Mine Explosion</td><td>400</td><td>8</td></tr>
+
+</table>
+
+</div>
+</div>
+
+<script>
+function searchItem(){
+let input = document.getElementById("search").value.toLowerCase()
+let tables = document.getElementsByClassName("searchTable")
+
+for(let t=0;t<tables.length;t++){
+let tr = tables[t].getElementsByTagName("tr")
+
+for(let i=1;i<tr.length;i++){
+let td = tr[i].getElementsByTagName("td")[0]
+
+if(td){
+let txt = td.textContent || td.innerText
+tr[i].style.display = txt.toLowerCase().includes(input) ? "" : "none"
+}
+}
+}
+}
+</script>
+
+</body>
+</html>
