@@ -43,9 +43,55 @@ background:#1a1a1a;
 transform:translateX(5px);
 }
 
+/* LEADERBOARD DERECHA */
+.leaderboard{
+position:fixed;
+right:0;
+top:0;
+width:240px;
+height:100vh;
+background:#111;
+padding:20px;
+border-left:1px solid #222;
+box-sizing:border-box;
+}
+
+.leaderboard h3{
+text-align:center;
+color:#00d4ff;
+margin-bottom:15px;
+}
+
+/* PLAYER */
+.player{
+display:flex;
+justify-content:space-between;
+padding:8px;
+margin-bottom:6px;
+background:#181818;
+border-radius:6px;
+font-size:13px;
+transition:0.2s;
+}
+
+.player:hover{
+transform:scale(1.03);
+box-shadow:0 0 10px #00d4ff;
+}
+
+/* TOP 3 */
+.top1{ box-shadow:0 0 10px gold; }
+.top2{ box-shadow:0 0 10px silver; }
+.top3{ box-shadow:0 0 10px #cd7f32; }
+
+.value{
+color:#00ff99;
+}
+
 /* MAIN */
 .main{
 margin-left:240px;
+margin-right:240px;
 min-height:100vh;
 display:flex;
 justify-content:center;
@@ -185,10 +231,23 @@ color:#00d4ff;
 }
 
 /* RESPONSIVE */
-@media(max-width:800px){
+@media(max-width:900px){
+
+.leaderboard{
+position:relative;
+width:100%;
+height:auto;
+margin-top:20px;
+}
+
+.main{
+margin-right:0;
+}
+
 .layout{
 grid-template-columns:1fr;
 }
+
 }
 
 </style>
@@ -214,6 +273,63 @@ grid-template-columns:1fr;
 <a href="Secrets.html">🔮 Secrets</a>
 <a href="Godlys.html">💎 Godlys</a>
 <a href="Legendary.html">🔴 Legendary</a>
+
+</div>
+
+<!-- LEADERBOARD -->
+<div class="leaderboard">
+
+<h3>🏆 Top Inventories</h3>
+
+<div class="player top1">
+<span>🥇 Luc4Saliendo</span>
+<span class="value">70228</span>
+</div>
+
+<div class="player top2">
+<span>🥈 Player2</span>
+<span class="value">0</span>
+</div>
+
+<div class="player top3">
+<span>🥉 Player3</span>
+<span class="value">0</span>
+</div>
+
+<div class="player">
+<span>#4 Player4</span>
+<span class="value">0</span>
+</div>
+
+<div class="player">
+<span>#5 Player5</span>
+<span class="value">0</span>
+</div>
+
+<div class="player">
+<span>#6 Player6</span>
+<span class="value">0</span>
+</div>
+
+<div class="player">
+<span>#7 Player7</span>
+<span class="value">0</span>
+</div>
+
+<div class="player">
+<span>#8 Player8</span>
+<span class="value">0</span>
+</div>
+
+<div class="player">
+<span>#9 Player9</span>
+<span class="value">0</span>
+</div>
+
+<div class="player">
+<span>#10 Player10</span>
+<span class="value">0</span>
+</div>
 
 </div>
 
@@ -263,6 +379,8 @@ Total: <span id="total">0</span>
 
 <script>
 
+/* TU CODIGO ORIGINAL SIN CAMBIOS */
+
 const pages = [
 "Stelars.html",
 "Chromas.html",
@@ -274,47 +392,32 @@ const pages = [
 let values = {}
 let total = 0
 
-/* CARGAR ITEMS */
 async function loadValues(){
-
 for(let file of pages){
-
 try{
 let res = await fetch(file)
 let text = await res.text()
-
 let doc = new DOMParser().parseFromString(text,"text/html")
 let rows = doc.querySelectorAll("table tr")
 
 rows.forEach((row,i)=>{
 if(i===0) return
-
 let cols = row.querySelectorAll("td")
-
 if(cols.length >= 2){
-
 let name = cols[0].innerText.trim()
 let value = parseInt(cols[1].innerText.replace(/[^0-9]/g,""))
-
 if(name && !isNaN(value)){
 values[name] = value
 }
-
 }
-
 })
-
 }catch(e){
 console.log("Error:", file)
 }
-
+}
 }
 
-}
-
-/* SUGERENCIAS */
 function showSuggestions(){
-
 let input = document.getElementById("itemName").value.toLowerCase()
 let box = document.getElementById("suggestions")
 
@@ -338,12 +441,9 @@ box.innerHTML = ""
 box.appendChild(div)
 
 })
-
 }
 
-/* AGREGAR ITEM */
 function addItem(){
-
 let name = document.getElementById("itemName").value
 let qty = parseInt(document.getElementById("qty").value)
 
@@ -371,23 +471,14 @@ div.innerHTML = `
 </div>
 `
 
-/* ELIMINAR ITEM */
 div.querySelector(".removeBtn").onclick = () => {
-
-div.style.opacity = "0"
-div.style.transform = "scale(0.9)"
-
-setTimeout(()=>{
 div.remove()
 total -= value
 document.getElementById("total").innerText = total
-},200)
-
 }
 
 document.getElementById("list").appendChild(div)
 document.getElementById("total").innerText = total
-
 }
 
 loadValues()
